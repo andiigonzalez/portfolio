@@ -1,6 +1,75 @@
+:root {
+    --color-accent: oklch(65% 50% 0);
+    }
+
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
+    accent-color: var(--color-accent);
     font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: max(1em, (100% - 100ch) / 2);
+
   }
+
+/* >>>>>>>>>>>>>>>>>>>> NAVIGATION <<<<<<<<<<<<<<<<<<<< */
+
+nav ul,li {
+    display: contents;
+  }
+
+nav {
+    display: flex;
+    margin-bottom: 1em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: oklch(80% 3% 200);
+  }
+
+nav a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav a.current {
+    flex: 1;
+    border-bottom-width: 0.4em;
+    padding-bottom: 0.2em;
+}
+
+nav a:hover {
+    border-bottom:0.4em solid var(--color-accent);
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+    padding-bottom: 0.2em;
+}
+
+/* >>>>>>>>>>>>>>>>>>>> CONTACT <<<<<<<<<<<<<<<<<<<< */
+
+input, textarea, button {
+    font: inherit;
+}
+form {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+ }
+
+label {
+    margin-block: 2em ;
+    display: block;
+ }
+
+/* >>>>>>>>>>>>>>>>>>>> RESUME <<<<<<<<<<<<<<<<<<<< */
+
+  .resume-header {
+    text-align: center;
+  }
+  .resume-details{
+    display: flex;
+    text-align: left;
+  }
+  
