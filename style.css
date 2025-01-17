@@ -15,7 +15,7 @@ body {
 
 /* >>>>>>>>>>>>>>>>>>>> NAVIGATION <<<<<<<<<<<<<<<<<<<< */
 
-nav ul,li {
+nav ul, nav ul li {
     display: contents;
   }
 
@@ -51,15 +51,16 @@ nav a:hover {
 
 input, textarea, button {
     font: inherit;
+    width: 100% ;
 }
 form {
     display: block;
-    width: 100%;
+    
     box-sizing: border-box;
  }
 
 label {
-    margin-block: 2em ;
+    margin-block-start: 2em ;
     display: block;
  }
 
@@ -72,4 +73,3 @@ label {
     display: flex;
     text-align: left;
   }
-  
