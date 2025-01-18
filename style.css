@@ -57,7 +57,6 @@ nav {
 .projects{
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    grid-column-start: auto;
     gap: 1em;
 
     article {
@@ -71,7 +70,13 @@ nav {
         }
         h1, h2, h3, h4, h5, h6 {
             line-height: 1.1;
-            text-wrap: balance;
+            text-align: balance;
+        }
+        &:hover{
+            border-bottom:0.4em solid var(--color-accent);
+            background-color: oklch(from var(--color-accent) 95% 5% h);
+            padding-bottom: 0.2em;
+
         }
     }
 }
@@ -107,11 +112,68 @@ label {
 
 
 /* >>>>>>>>>>>>>>>>>>>> RESUME <<<<<<<<<<<<<<<<<<<< */
+.resume-bullet:hover{
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+.resume h3:hover{
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+.resume h2:hover{
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+.resume-header{
+    text-align:center;
+}
 
-  .resume-header {
-    text-align: center;
-  }
-  .resume-details{
+.resume article{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &:hover{
+        background-color: oklch(from var(--color-accent) 95% 5% h);
+    }
+}
+
+.resume article header {
+    flex: 1;
+}
+.resume article header h3{
+    margin: 0; /* Remove default margins */
+    line-height: 1.1; /* Tighter line spacing */
+}
+.resume-details {
+    display: block;
+    text-align: right;
+    margin: 0; /* Add spacing between spans */
+}
+
+.resume-details time , p{
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.skills{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.skills-column{
+    text-align: center;
+}
+.skills-column:hover{
+    background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+.skills-column ul li {
     text-align: left;
-  }
+    list-style-type: circle;
+    
+}
+.skills-column h3 {
+    padding: 1em;
+    text-align: center;  
+}
