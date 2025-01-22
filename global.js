@@ -48,7 +48,9 @@ for (let p of pages) {
   li.appendChild(a);
   ul.appendChild(li);
 }
-
+// Automatic detection of the OS color scheme
+const osDarkMode = matchMedia("(prefers-color-scheme: dark)").matches;
+const osLightMode = matchMedia("(prefers-color-scheme: light)").matches;
 document.body.insertAdjacentHTML(
   "afterbegin",
   `
@@ -70,11 +72,24 @@ if (savedScheme) {
   document.documentElement.style.setProperty("color-scheme", savedScheme);
   select.value = savedScheme;
 }
+const select = document.querySelector(".color-scheme select");
 
+// Apply saved scheme on page load
+const savedScheme = localStorage.colorScheme;
+if (savedScheme) {
+  document.documentElement.classList.add(savedScheme);
+  select.value = savedScheme;
+}
 
+// Add event listener for changes
 select.addEventListener("input", function (event) {
   const colorScheme = event.target.value;
-  document.documentElement.style.setProperty("color-scheme", colorScheme);
-  localStorage.colorScheme = colorScheme; // Save to localStorage
+  document.documentElement.classList.remove("dark-mode", "light-mode");
+  if (colorScheme === "dark") {
+    document.documentElement.classList.add("dark-mode");
+  } else if (colorScheme === "light") {
+    document.documentElement.classList.add("light-mode");
+  }
+  localStorage.colorScheme = colorScheme; // Save preference
 });
 
