@@ -3,6 +3,7 @@ console.log('IT’S ALIVE!');
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
 const pages = [
   { url: "https://andiigonzalez.github.io/portfolio/index.html", title: "Home" },
   { url: "https://andiigonzalez.github.io/portfolio/projects/index.html", title: "Projects" },
