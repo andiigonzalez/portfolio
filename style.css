@@ -16,6 +16,13 @@ body {
   h1 {
     text-align: center;
   }
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+}
 
 /* >>>>>>>>>>>>>>>>>>>> NAVIGATION <<<<<<<<<<<<<<<<<<<< */
 
@@ -56,6 +63,7 @@ nav {
     }
 
   }
+
 /* >>>>>>>>>>>>>>>>>>>> PROJECTS <<<<<<<<<<<<<<<<<<<< */
 
 .projects{
