@@ -3,23 +3,32 @@ console.log('IT’S ALIVE!');
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
+
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
 const pages = [
-  { url: "https://andiigonzalez.github.io/portfolio/index.html", title: "Home" },
-  { url: "https://andiigonzalez.github.io/portfolio/projects/index.html", title: "Projects" },
-  { url: "https://andiigonzalez.github.io/portfolio/contact/index.html", title: "Contact" },
-  { url: "https://andiigonzalez.github.io/portfolio/resume.html", title: "Resume" },
+  { url: "index.html", title: "Home" },
+  { url: "projects/index.html", title: "Projects" },
+  { url: "contact/index.html", title: "Contact" },
+  { url: "resume.html", title: "Resume" },
   { url: "https://github.com/andiigonzalez", title: "GitHub", external: true },
 ];
+
 const nav = document.createElement("nav");
 const ul = document.createElement("ul");
 nav.appendChild(ul);
 document.body.prepend(nav);
+
 pages.forEach((page) => {
   const li = document.createElement("li");
   const a = document.createElement("a");
 
-  a.href = page.url;
+  // Adjust URL for non-home pages
+  let url = page.url;
+  if (!ARE_WE_HOME && !url.startsWith('http')) {
+    url = '../' + url;
+  }
+  a.href = url;
   a.textContent = page.title;
 
   // Highlight current page
