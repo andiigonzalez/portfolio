@@ -52,6 +52,7 @@ for (let p of pages) {
   li.appendChild(a);
   ul.appendChild(li);
 }
+
 document.body.insertAdjacentHTML(
   "afterbegin",
   `
@@ -65,4 +66,21 @@ document.body.insertAdjacentHTML(
   </label>
   `
 );
+
+// Get references to the <select> element
+const select = document.querySelector(".color-scheme select");
+
+// Apply saved color scheme on page load
+const savedScheme = localStorage.colorScheme;
+if (savedScheme) {
+  document.documentElement.style.setProperty("color-scheme", savedScheme);
+  select.value = savedScheme;
+}
+
+// Add event listener for changes to the select element
+select.addEventListener("input", function (event) {
+  const colorScheme = event.target.value;
+  document.documentElement.style.setProperty("color-scheme", colorScheme);
+  localStorage.colorScheme = colorScheme; // Save to localStorage
+});
 
