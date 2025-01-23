@@ -82,5 +82,6 @@ select.addEventListener("input", function (event) {
     document.documentElement.classList.add("light-mode");
   }
   localStorage.colorScheme = colorScheme; // Save preference
+  document.documentElement.offsetHeight; // Trigger a reflow
 });
 
