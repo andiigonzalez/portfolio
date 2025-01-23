@@ -10,7 +10,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 
 let pages = [
-  { url: "index.html", title: "Home" },
+  { url: "", title: "Home" },
   { url: "projects/index.html", title: "Projects" },
   { url: "contact/index.html", title: "Contact" },
   { url: "resume.html", title: "Resume" },
