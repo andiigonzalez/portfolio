@@ -96,3 +96,16 @@ select.addEventListener("input", function (event) {
   document.documentElement.offsetHeight; // Trigger a reflow
 });
 
+
+const form = document.querySelector("#contact-form");
+form?.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const data = new FormData(form);
+  const email = data.get("subject");
+  const subject = data.get("body");
+  const url = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}`;
+
+  // Open the mailto URL
+  location.href = url;
+});
