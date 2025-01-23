@@ -50,6 +50,7 @@ for (let p of pages) {
 // Automatic detection of the OS color scheme
 const osDarkMode = matchMedia("(prefers-color-scheme: dark)").matches;
 const osLightMode = matchMedia("(prefers-color-scheme: light)").matches;
+
 document.body.insertAdjacentHTML(
   "afterbegin",
   `
@@ -66,11 +67,16 @@ document.body.insertAdjacentHTML(
 
 
 const select = document.querySelector(".color-scheme select");
-const savedScheme = localStorage.colorScheme;
-if (savedScheme) {
-  document.documentElement.style.setProperty("color-scheme", savedScheme);
-  select.value = savedScheme;
+const savedScheme = localStorage.colorScheme || (osDarkMode ? "dark" : "light dark");
+document.documentElement.style.setProperty("color-scheme", savedScheme);
+if (savedScheme === "dark") {
+  document.documentElement.classList.add("dark-mode");
+} else if (savedScheme === "light") {
+  document.documentElement.classList.add("light-mode");
 }
+select.value = savedScheme;
+
+
 select.addEventListener("input", function (event) {
   const colorScheme = event.target.value;
   document.documentElement.classList.remove("dark-mode", "light-mode");
@@ -82,7 +88,7 @@ select.addEventListener("input", function (event) {
     document.documentElement.classList.add("light-mode");
     document.documentElement.style.setProperty("color-scheme", "light");
   } else {
-    // Automatic mode
+  
     document.documentElement.style.setProperty("color-scheme", "light dark");
   }
 
