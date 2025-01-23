@@ -71,16 +71,21 @@ if (savedScheme) {
   document.documentElement.style.setProperty("color-scheme", savedScheme);
   select.value = savedScheme;
 }
-
-// Add event listener for changes
 select.addEventListener("input", function (event) {
   const colorScheme = event.target.value;
   document.documentElement.classList.remove("dark-mode", "light-mode");
+
   if (colorScheme === "dark") {
     document.documentElement.classList.add("dark-mode");
+    document.documentElement.style.setProperty("color-scheme", "dark");
   } else if (colorScheme === "light") {
     document.documentElement.classList.add("light-mode");
+    document.documentElement.style.setProperty("color-scheme", "light");
+  } else {
+    // Automatic mode
+    document.documentElement.style.setProperty("color-scheme", "light dark");
   }
+
   localStorage.colorScheme = colorScheme; // Save preference
   document.documentElement.offsetHeight; // Trigger a reflow
 });
