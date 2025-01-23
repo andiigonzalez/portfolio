@@ -72,14 +72,6 @@ if (savedScheme) {
   document.documentElement.style.setProperty("color-scheme", savedScheme);
   select.value = savedScheme;
 }
-const select = document.querySelector(".color-scheme select");
-
-// Apply saved scheme on page load
-const savedScheme = localStorage.colorScheme;
-if (savedScheme) {
-  document.documentElement.classList.add(savedScheme);
-  select.value = savedScheme;
-}
 
 // Add event listener for changes
 select.addEventListener("input", function (event) {
