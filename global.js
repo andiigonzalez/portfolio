@@ -43,7 +43,6 @@ for (let p of pages) {
     a.target = "_blank";
   }
 
-
   const li = document.createElement("li");
   li.appendChild(a);
   ul.appendChild(li);
