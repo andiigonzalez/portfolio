@@ -10,10 +10,10 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 
 const pages = [
-  { url: "", title: "Home" },
-  { url: "projects/", title: "Projects" },
-  { url: "contact/", title: "Contact" },
-  { url: "portfolio/", title: "Resume" },
+  { url: "https://andiigonzalez.github.io/portfolio/index.html", title: "Home" },
+  { url: "https://andiigonzalez.github.io/portfolio/projects/index.html", title: "Projects" },
+  { url: "https://andiigonzalez.github.io/portfolio/contact/index.html", title: "Contact" },
+  { url: "https://andiigonzalez.github.io/portfolio/resume.html", title: "Resume" },
   { url: "https://github.com/andiigonzalez", title: "GitHub", external: true },
 ];
 const BASE_URL = "/portfolio/";
