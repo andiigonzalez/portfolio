@@ -10,7 +10,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 
 let pages = [
-  { url: "https://github.com/andiigonzalez/portfolio/index.html", title: "Home" },
+  { url: "index.html", title: "Home" },
   { url: "projects/index.html", title: "Projects" },
   { url: "contact/index.html", title: "Contact" },
   { url: "resume.html", title: "Resume" },
