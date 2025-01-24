@@ -9,7 +9,7 @@ function $$(selector, context = document) {
 const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 
-let pages = [
+const pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
   { url: "contact/", title: "Contact" },
@@ -22,11 +22,11 @@ let ul = document.createElement("ul");
 nav.appendChild(ul);
 document.body.prepend(nav);
 
-for (let p of pages) {
+for (const p of pages) {
   let url = p.url;
   let title = p.title;
 
-  if(!url.startswith("http")){
+  if (!url.startsWith("http")) {
     url= BASE_URL+url;
   }
 
