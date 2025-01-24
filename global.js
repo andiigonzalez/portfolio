@@ -10,13 +10,13 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 
 let pages = [
-  { url: "https://andiigonzalez.github.io/portfolio/index.html", title: "Home" },
-  { url: "https://andiigonzalez.github.io/portfolio/projects/index.html", title: "Projects" },
-  { url: "https://andiigonzalez.github.io/portfolio/contact/index.html", title: "Contact" },
-  { url: "https://andiigonzalez.github.io/portfolio/resume.html", title: "Resume" },
+  { url: "", title: "Home" },
+  { url: "projects/", title: "Projects" },
+  { url: "contact/", title: "Contact" },
+  { url: "portfolio/", title: "Resume" },
   { url: "https://github.com/andiigonzalez", title: "GitHub", external: true },
 ];
-
+const BASE_URL = "/portfolio/
 let nav = document.createElement("nav");
 let ul = document.createElement("ul");
 nav.appendChild(ul);
@@ -26,7 +26,9 @@ for (let p of pages) {
   let url = p.url;
   let title = p.title;
 
-  url = !ARE_WE_HOME && !url.startsWith("http") ? "../" + url : url;
+  if(!url.startswith("http")){
+    url= BASE_URL+url;
+  }
 
   const a = document.createElement("a");
   a.href = url;
