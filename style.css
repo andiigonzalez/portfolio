@@ -124,15 +124,6 @@ label {
 
 
 /* >>>>>>>>>>>>>>>>>>>> RESUME <<<<<<<<<<<<<<<<<<<< */
-.resume-bullet:hover{
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-}
-.resume h3:hover{
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-}
-.resume h2:hover{
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-}
 .resume-header{
     text-align:center;
 }
@@ -175,9 +166,6 @@ label {
 }
 .skills-column{
     text-align: center;
-}
-.skills-column:hover{
-    background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
 .skills-column ul li {
