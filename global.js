@@ -16,7 +16,7 @@ const pages = [
   { url: "https://andiigonzalez.github.io/portfolio/resume.html", title: "Resume" },
   { url: "https://github.com/andiigonzalez", title: "GitHub", external: true },
 ];
-const BASE_URL = "/portfolio/";
+const BASE_URL = "https://andiigonzalez.github.io/portfolio/";
 let nav = document.createElement("nav");
 let ul = document.createElement("ul");
 nav.appendChild(ul);
@@ -27,8 +27,8 @@ for (const p of pages) {
   let title = p.title;
 
   if (!url.startsWith("http")) {
-    url= BASE_URL+url;
-  }
+  url = BASE_URL + url;
+}
 
   const a = document.createElement("a");
   a.href = url;
