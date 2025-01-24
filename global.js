@@ -16,7 +16,7 @@ let pages = [
   { url: "portfolio/", title: "Resume" },
   { url: "https://github.com/andiigonzalez", title: "GitHub", external: true },
 ];
-const BASE_URL = "/portfolio/
+const BASE_URL = "/portfolio/"
 let nav = document.createElement("nav");
 let ul = document.createElement("ul");
 nav.appendChild(ul);
