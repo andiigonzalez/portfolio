@@ -1,5 +1,5 @@
 
-import { fetchJSON, renderProjects } from '../global.js';
+import { fetchJSON, renderProjects } from 'global.js';
 
 (async function () {
     try {
