@@ -154,7 +154,7 @@ export function renderProjects(projects, containerElement,  headingLevel = 'h2')
       const article = document.createElement('article');
 
       article.innerHTML = `
-      <${headingLevel}>${project.title || "Untitled Project"}</${headingLevel}>
+      <${headingLevel}>${project.title - project.year || "Untitled Project"}</${headingLevel}>
       <img src="${project.image || "https://vis-society.github.io/labs/2/images/empty.svg"}" alt="${project.title}">
       <p>${project.description || "No Description Available."}</p>
       `;

@@ -3,7 +3,8 @@ import { fetchJSON, renderProjects } from '../global.js';
 (async function () {
     try {
         // Fetch projects data
-        const projects = await fetchJSON('../lib/projects.json');
+        const projects = await fetchJSON('https://andiigonzalez.github.io/portfolio/lib/projects.json');
+        console.log("Fetched Projects:", projects);
 
         // Select the projects container and title element
         const projectsContainer = document.querySelector('.projects');
