@@ -17,12 +17,12 @@ const profileStats = document.querySelector('#profile-stats'); // Select HTML co
 
 if (profileStats) {
     profileStats.innerHTML = `
-        <h3>My GitHub Statistics</h3>
+        <h2>My GitHub Statistics: </h2>
             <dl>
-                <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
-                <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
-                <dt>Followers:</dt><dd>${githubData.followers}</dd>
-                <dt>Following:</dt><dd>${githubData.following}</dd>
+                <dt>FOLLOWERS:</dt><dd>${githubData.followers}</dd>
+                <dt>FOLLOWING:</dt><dd>${githubData.following}</dd>
+                <dt>PUBLIC REPOS:</dt><dd>${githubData.public_repos}</dd>
+                <dt>PUBLIC GISTS:</dt><dd>${githubData.public_gists}</dd>
             </dl>
         `;
     }
