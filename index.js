@@ -10,11 +10,12 @@ const projectsContainer = document.querySelector('.projects');
 
 
 renderProjects(latestProjects, projectsContainer, 'h3');
+console.log("Latest Projects:", latestProjects);
 
 import { fetchGitHubData } from './global.js'; // Import function
 
 
-const githubData = await fetchGitHubData('giorgianicolaou'); // Fetch data
+const githubData = await fetchGitHubData('andiigonzalez'); // Fetch data
 const profileStats = document.querySelector('#profile-stats'); // Select HTML container
 
 if (profileStats) {
