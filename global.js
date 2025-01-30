@@ -115,19 +115,20 @@ form?.addEventListener("submit", function (event) {
 // PROJECTS//
 export async function fetchJSON(url) {
   try {
-      // Fetch the JSON file from the given URL
-      const response = await fetch(url);
+    console.log(`Fetching: ${url}`); 
+    const response = await fetch(url);
 
-      if (!response.ok) {
-        throw new Error(`Failed to fetch projects: ${response.statusText}`);
-      }
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
 
-      const data = await response.json();
-        return data;
+    const data = await response.json();
+    console.log("Fetched Data:", data);
+    return data;
 
 
   } catch (error) {
-      console.error('Error fetching or parsing JSON data:', error);
+    console.error('Error fetching or parsing JSON data:', error);
   }
 }
 
@@ -154,7 +155,7 @@ export function renderProjects(projects, containerElement,  headingLevel = 'h2')
       const article = document.createElement('article');
 
       article.innerHTML = `
-      <${headingLevel}>${project.title - project.year || "Untitled Project"}</${headingLevel}>
+      <${headingLevel}>${project.title} - ${project.year}) || "Untitled Project"}</${headingLevel}>
       <img src="${project.image || "https://vis-society.github.io/labs/2/images/empty.svg"}" alt="${project.title}">
       <p>${project.description || "No Description Available."}</p>
       `;
