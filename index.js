@@ -1,7 +1,7 @@
 
 import { fetchJSON, renderProjects } from '../global.js';
 
-const projects = await fetchJSON('../lib/projects.json');
+const projects = await fetchJSON('https://andiigonzalez.github.io/portfolio/lib/projects.json');
 console.log("Projects Retrieved:", projects);
 
 const latestProjects = projects.slice(0, 3);
@@ -12,7 +12,7 @@ const projectsContainer = document.querySelector('.projects');
 renderProjects(latestProjects, projectsContainer, 'h3');
 console.log("Latest Projects:", latestProjects);
 
-import { fetchGitHubData } from './global.js'; // Import function
+import { fetchGitHubData } from '../global.js'; // Import function
 
 
 const githubData = await fetchGitHubData('andiigonzalez'); // Fetch data

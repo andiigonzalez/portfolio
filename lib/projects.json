@@ -3,19 +3,19 @@
         "title": "Powering Through",
         "year": "2024",
         "image": "../imgs/powering_through_img.jpeg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque laborum incidunt ratione quaerat ducimus animi? Corporis rem deserunt numquam dolores! Eveniet provident dicta quibusdam aliquam dolore, illo aperiam vitae ea."
+        "description": "This study investigates the trends in power outages across the nation, identifies the primary drivers for these events and hopes to provide relevant information that may assist communities and their policy makers in reducing the frequency and impact of this phenomena. The project also includes a binary classification model that predicts whether the cause of a power outage is weather related or not."
     },
     {
-        "title": "Project Title",
+        "title": "Visualization Techniques 1",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ducimus eligendi soluta non saepe aut commodi, blanditiis molestiae eos at incidunt nostrum quod nam placeat vel eaque vero corrupti a odit officia architecto sequi minima? Perspiciatis nihil quisquam pariatur."
+        "description": "An exploration and analysis of visualization techniques for data science."
     },
     {
-        "title": "Project Title",
+        "title": "Visualization Techniques: Deceptive Techniques",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Porro quia sit odit a fuga aut aliquam eligendi error maiores nostrum excepturi quam quibusdam voluptatum accusantium voluptatem officiis ipsam recusandae, ea dolorem laborum amet. Nesciunt facere beatae dolore architecto!"
+        "description": "Understanding deceptive visualizations and their characteristics. "
     },
     {
         "title": "Project Title",
@@ -36,10 +36,10 @@
         "description": "Perferendis quis maiores, quasi, in, nulla vitae beatae perspiciatis temporibus cumque ducimus consequuntur. Praesentium, maxime, necessitatibus neque amet repellat quam modi vitae et, tempora aliquid reiciendis! Autem quia suscipit impedit."
     },
     {
-        "title": "KNN Image Classifier",
+        "title": "Image Processing",
         "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "A fugiat distinctio nobis necessitatibus omnis sunt ut rerum in. Laudantium temporibus ducimus adipisci, exercitationem minima at. Neque delectus quo, perferendis earum, dolor maxime accusantium fugit recusandae sint minus commodi."
+        "description": "This notebook includes several image processing techniques implemented in Python such as KNN Image Classifier, blurring, highlighting the edges and many more."
     },
     {
         "title": "Project Title",
