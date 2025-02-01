@@ -94,8 +94,8 @@ select.addEventListener("input", function (event) {
     document.documentElement.style.setProperty("color-scheme", "light dark");
   }
 
-  localStorage.colorScheme = colorScheme; // Save preference
-  document.documentElement.offsetHeight; // Trigger a reflow
+  localStorage.colorScheme = colorScheme;
+  document.documentElement.offsetHeight; 
 });
 
 
@@ -108,7 +108,7 @@ form?.addEventListener("submit", function (event) {
   const subject = data.get("body");
   const url = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}`;
 
-  // Open the mailto URL
+
   location.href = url;
 });
 
@@ -154,7 +154,7 @@ export function renderProjects(projects, containerElement,  headingLevel = 'h2')
   projects.forEach((project) => {
       const article = document.createElement('article');
       const title = project.title ? project.title : "Untitled Project"; // Default title if missing
-      const image = project.image ? project.image : "https://vis-society.github.io/labs/2/images/empty.svg"; // Default image
+      const image = project.image ? project.image : "https://vis-society.github.io/labs/2/images/empty.svg"; 
       const description = project.description ? project.description : "No Description Available."
   
 
@@ -170,7 +170,11 @@ export function renderProjects(projects, containerElement,  headingLevel = 'h2')
 
 // Step 3 Lab 4 //
 export async function fetchGitHubData(username) {
-  // return statement here
-
-  return fetchJSON(`https://api.github.com/users/${username}`);
+  try {
+    const response = await fetchJSON(`https://api.github.com/users/${username}`);
+    return response; 
+  } catch (error) {
+    console.error("Error fetching GitHub data:", error);
+    return {}; 
+}
 }
