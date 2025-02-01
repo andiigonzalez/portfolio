@@ -1,5 +1,5 @@
 
-import { fetchJSON, renderProjects } from '../global.js';
+import { fetchJSON, renderProjects } from 'https://andiigonzalez.github.io/portfolio/global.js';
 
 const projects = await fetchJSON('https://andiigonzalez.github.io/portfolio/lib/projects.json');
 console.log("Projects Retrieved:", projects);
