@@ -12,7 +12,7 @@ const projectsContainer = document.querySelector('.projects');
 renderProjects(latestProjects, projectsContainer, 'h3');
 console.log("Latest Projects:", latestProjects);
 
-import { fetchGitHubData } from '../global.js'; // Import function
+import { fetchGitHubData } from './global.js'; // Import function
 
 
 const githubData = await fetchGitHubData('andiigonzalez'); // Fetch data
