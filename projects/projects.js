@@ -160,12 +160,12 @@ function filterByYear(selectedYear) {
     if (selectedIndex === selectedYear) {
         selectedIndex = -1;
         renderProjects(projects, projectsContainer, 'h2'); // Show all projects
-        renderPieChart(projects);
+        //renderPieChart(projects);
     } else {
         selectedIndex = selectedYear;
         const filteredProjects = projects.filter((project) => project.year === selectedYear);
         renderProjects(filteredProjects, projectsContainer, 'h2');
-        renderPieChart(filteredProjects);
+        //renderPieChart(filteredProjects);
     }
     let filteredProjects = projects.filter((project) => {
         let matchesQuery = query === "" || Object.values(project).join('\n').toLowerCase().includes(query.toLowerCase());
@@ -175,9 +175,10 @@ function filterByYear(selectedYear) {
 
 
     renderProjects(filteredProjects, projectsContainer, 'h2');
-    renderPieChart(filteredProjects);
+    //renderPieChart(filteredProjects);
+
     
-    d3.selectAll("path").classed("selected", (d, i) => i === selectedIndex);
-    d3.selectAll(".legend-item").classed("selected", (d, i) => i === selectedIndex);
+    //d3.selectAll("path").classed("selected", (d, i) => i === selectedIndex);
+    //d3.selectAll(".legend-item").classed("selected", (d, i) => i === selectedIndex);
 }
 

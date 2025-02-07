@@ -273,7 +273,7 @@ svg:has(path:hover) {
 }
 
 path {
-    transition: 300ms;
+    transition: opacity 0.3s ease-in-out;
     cursor: pointer;
 }
 
