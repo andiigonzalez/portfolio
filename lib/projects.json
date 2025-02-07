@@ -14,7 +14,7 @@
     {
         "title": "Visualization Techniques: Deceptive Techniques",
         "year": "2025",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/deceptive-visualizations.jpeg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/deceptive-visualizations.jpg",
         "description": "Understanding deceptive visualizations and their characteristics. "
     },
     {
@@ -38,7 +38,7 @@
     {
         "title": "Image Processing",
         "year": "2023",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/knn-img-clasification.jpeg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/knn-img-clasification.jpg",
         "description": "This notebook includes several image processing techniques implemented in Python such as KNN Image Classifier, blurring, highlighting the edges and many more."
     },
     {
