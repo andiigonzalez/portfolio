@@ -2,7 +2,7 @@
     {
         "title": "Powering Through",
         "year": "2024",
-        "image": "../imgs/powering_through_img.jpeg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/powering_through_img.jpeg",
         "description": "This study investigates the trends in power outages across the nation, identifies the primary drivers for these events and hopes to provide relevant information that may assist communities and their policy makers in reducing the frequency and impact of this phenomena. The project also includes a binary classification model that predicts whether the cause of a power outage is weather related or not."
     },
     {
