@@ -144,8 +144,7 @@ nav {
         border-radius: 10px;
         width:300px;
         height:150px;
-        margin-top:1.5px;
-        margin-bottom:2px;
+        padding-bottom: 0.3em;
     }
 
     article {
@@ -155,7 +154,8 @@ nav {
 
         h2 {
             margin-top:1px;
-            margin-bottom:2px;
+            padding-bottom: 0.8em;
+            margin-bottom:2.5px;
             gap: 1em;
         }
         h1, h2, h3, h4, h5, h6 {
@@ -169,6 +169,69 @@ nav {
 
         }
     }
+}
+.project-year {
+    font-family: 'Courier New', Courier, monospace; /* Example: Monospace font */
+    font-size: 1em;
+    padding-top: 0.8em;
+    color: black; /* Adjust color if needed */
+  }
+svg {
+    max-width: 20em;
+    margin-block: 2em;
+  
+    overflow: visible;
+}
+#projects-pie-plot {
+    width: 80px;  
+    height: 80px;
+    max-width: 5em;
+    display: block;
+    margin: 0 auto; 
+    margin-block: 2em;
+    overflow: visible;
+}
+
+.legend{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: fit-content;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+
+.legend-item{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px;
+        white-space: nowrap;
+        flex: 1 1 auto;
+}
+    
+.legend .swatch {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: inline-block;
+        gap: 2px;
+        background-color: var(--color);
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+
+
 }
 
 

@@ -1,5 +1,7 @@
 import { fetchJSON, renderProjects } from '../global.js';
 
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
+
 (async function () {
     try {
         // Fetch projects data
@@ -29,7 +31,9 @@ import { fetchJSON, renderProjects } from '../global.js';
             if (projectsTitle) {
                 projectsTitle.textContent = ` 0 Projects`;
             }
-        }
+        };
+
+
     } catch (error) {
         console.error("Error loading projects:", error);
         const projectsContainer = document.querySelector('.projects');
@@ -37,6 +41,101 @@ import { fetchJSON, renderProjects } from '../global.js';
             projectsContainer.innerHTML = '<p>Failed to load projects.</p>';
         }
     }
+
 })();
 
+const projects = await fetchJSON('../lib/projects.json');
+
+let rolledData = d3.rollups(
+    projects,
+    (v) => v.length,
+    (d) => d.year,
+);
+
+let data = rolledData.map(([year, count]) => {
+    return { value: count, label: year }
+});
+
+let svg = d3.select("svg");
+
+
+let arcGenerator = d3.arc().innerRadius(0).outerRadius(30);
+let sliceGenerator = d3.pie().value(d => d.value);
+let arcData = sliceGenerator(data);
+let colors = d3.scaleOrdinal(d3.schemeSet2);
+
+let arcs = arcData.map(d => arcGenerator(d));
+
+arcs.forEach((arc, idx) => {
+    d3.select('svg')
+        .append("path")
+        .attr("d", arc)
+        .attr("fill", colors(idx))
+        .attr("stroke", "#fff")
+        .attr("stroke-width", "0.5px")
+});
+
+let legend = d3.select('.legend');
+data.forEach((d, idx) => {
+    legend.append('li')
+    .attr('style', `--color:${colors(idx)}`)
+    .attr('class', 'legend-item')
+    .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`)
+
+});
+
+let query = ''; 
+
+function setQuery(newQuery) {
+    query = newQuery;
+
+    let filteredProjects = projects.filter((project) => {
+        let values = Object.values(project).join('\n').toLowerCase();
+        return values.includes(query.toLowerCase());
+    });
+      
+    return filteredProjects;
+  }
+  
+  let searchInput = document.getElementsByClassName('searchBar')[0];
+  
+  searchInput.addEventListener('input', (event) => {
+
+    let filteredProjects = setQuery(event.target.value);
+    renderProjects(filteredProjects, projectsContainer, 'h2');
+
+
+    let newRolledData = d3.rollups(
+        filteredProjects,
+        (v) => v.length,
+        (d) => d.year,
+    );
+    let newData = newRolledData.map(([year, count]) => {
+        return { value: count, label: year }; // TODO
+    });
+
+    // re-calculate slice generator, arc data, arc, etc.
+    let newSliceGenerator = d3.pie().value((d) => d.value);
+    let newArcData = newSliceGenerator(newData); 
+    let newArcs = newArcData.map((d) => arcGenerator(d));
+
+    // TODO: clear up paths and legends
+    let newSVG = d3.select('svg'); 
+    newSVG.selectAll('path').remove();
+    legend.selectAll('li').remove();
+
+    // update paths and legends, refer to steps 1.4 and 2.2
+    newArcs.forEach((arc, idx) => {
+        newSVG
+        .append('path')
+        .attr('d', arc)
+        .attr('fill', colors(idx)) // Fill in the attribute for fill color via indexing the colors variable
+    })
+
+    newData.forEach((d, idx) => {
+        legend.append('li')
+            .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
+            .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
+    })
+});
 
