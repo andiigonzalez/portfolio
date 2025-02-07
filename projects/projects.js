@@ -2,8 +2,8 @@ import { fetchJSON, renderProjects } from '../global.js';
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
-const projects = await fetchJSON('https://andiigonzalez.github.io/portfolio/lib/projects.json');
-        
+//##################### SHOWING PROJECTS ON THE PAGE ##################### //
+const projects = await fetchJSON('https://andiigonzalez.github.io/portfolio/lib/projects.json');     
 const projectsContainer = document.querySelector('.projects');
 const projectsTitle = document.querySelector('.projects-title'); 
 renderProjects(projects, projectsContainer, 'h2');
