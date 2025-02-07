@@ -13,8 +13,9 @@ body {
     margin-inline: max(1em, (100% - 100ch) / 2);
 
   }
-  h1 {
+h1 {
     text-align: center;
+    font-size:2.8em;
   }
 .color-scheme {
   position: absolute;
@@ -44,6 +45,7 @@ body {
     grid-column: 1 / 2; /* Name stays on the left */
     margin-bottom: 10px;
     padding: 10px;
+    
 }
 
 .bio img {
@@ -152,11 +154,16 @@ nav {
         grid-row: span 3;
         gap: 10px 10px;
 
+        h1{
+            font-size: 2.8em;
+        }
+
         h2 {
             margin-top:1px;
             padding-bottom: 0.8em;
             margin-bottom:2.5px;
             gap: 1em;
+            font-size: 1.5em;
         }
         h1, h2, h3, h4, h5, h6 {
             line-height: 1.1;
@@ -178,8 +185,7 @@ nav {
   }
 svg {
     max-width: 20em;
-    margin-block: 2em;
-  
+    margin-block: 1em;
     overflow: visible;
 }
 #projects-pie-plot {
@@ -233,6 +239,35 @@ svg {
 
 
 }
+
+.searchBar {
+    width: 95%; 
+    padding: 0.5em; 
+    border: 1px solid #ccc;
+    border-radius: 0.5em; 
+    margin-bottom: 2em;
+
+}
+
+svg:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+}
+
+path {
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+  
+    &:is(path) {
+      fill: var(--color);
+    }
+  }
+
 
 
 /* >>>>>>>>>>>>>>>>>>>> CONTACT <<<<<<<<<<<<<<<<<<<< */

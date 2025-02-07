@@ -59,7 +59,7 @@ let data = rolledData.map(([year, count]) => {
 let svg = d3.select("svg");
 
 
-let arcGenerator = d3.arc().innerRadius(0).outerRadius(30);
+let arcGenerator = d3.arc().innerRadius(0).outerRadius(35);
 let sliceGenerator = d3.pie().value(d => d.value);
 let arcData = sliceGenerator(data);
 let colors = d3.scaleOrdinal(d3.schemeSet2);
@@ -139,3 +139,34 @@ function setQuery(newQuery) {
     })
 });
 
+let selectedIndex = -1; 
+
+svg.selectAll('path').remove();
+arcs.forEach((arc, i) => {
+    svg
+        .append('path')
+        .attr('d', arc)
+        .attr('fill', colors(i))
+        .on('click', () => {
+            // What should we do? (Keep scrolling to find out!)
+            selectedIndex = selectedIndex === i ? -1 : i; 
+
+            svg
+                .selectAll('path')
+                .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : '');
+
+            legend.selectAll('li').attr('class', (_, idx) => 
+            // TODO: filter idx to find correct pie slice and apply CSS from above
+                idx === selectedIndex ? 'selected' : '');
+
+            if (selectedIndex === -1) {
+                renderProjects(projects, projectsContainer, 'h2');
+            } else {
+                // TODO: filter projects and project them onto webpage
+                // Hint: `.label` might be useful
+                const selectedYear = data[selectedIndex].label;
+                const filteredProjects = projects.filter((project) => project.year === selectedYear);
+                renderProjects(filteredProjects, projectsContainer, 'h2');
+            }
+        });
+});
