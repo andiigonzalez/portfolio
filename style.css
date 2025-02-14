@@ -387,7 +387,8 @@ label {
 .stats {
     display: grid;
     grid-template-columns: repeat(6, 1fr);  /* 7 columns of equal size*/
-    gap: 1rem; 
+    align-items: left;
+    gap: 0.5rem; 
   }
   h2{
     font-weight: normal;
