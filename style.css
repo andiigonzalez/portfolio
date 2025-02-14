@@ -396,7 +396,6 @@ label {
     text-align: center;
     white-space: nowrap; /* Prevent text from breaking into new lines */
     grid-row: 1; /* Place all <dt> elements in first row */
-    font-size: 10px;
     color: gray;
     text-transform: uppercase;
     letter-spacing: 0.5px;
