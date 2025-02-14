@@ -12,6 +12,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 const pages = [
   { url: "", title: "Home" },
   { url: "projects/index.html", title: "Projects" },
+  { url: 'https://andiigonzalez.github.io/portfolio/meta/index.html', title: 'Meta Analysis' },
   { url: "https://andiigonzalez.github.io/portfolio/contact/index.html", title: "Contact" },
   { url: "https://andiigonzalez.github.io/portfolio/resume.html", title: "Resume" },
   { url: "https://github.com/andiigonzalez", title: "GitHub", external: true },

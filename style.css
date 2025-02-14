@@ -89,6 +89,7 @@ h1 {
 
 #profile-stats dt {
     grid-row: 1;
+    letter-spacing: 1px;
     color: gray;
 }
 
@@ -387,6 +388,9 @@ label {
     grid-template-columns: repeat(7, 1fr);  /* 7 columns of equal size*/
     gap: 1rem; 
   }
+  h2{
+    font-weight: normal;
+  }
   
   .stats dt {
     text-align: center;
@@ -394,9 +398,9 @@ label {
     grid-row: 1; /* Place all <dt> elements in first row */
     font-size: 10px;
     color: gray;
-    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    font-size: 1em;
   }
   
   .stats dd {
