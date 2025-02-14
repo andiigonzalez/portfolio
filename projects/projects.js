@@ -160,22 +160,22 @@ function filterByYear(selectedYear) {
     if (selectedIndex === selectedYear) {
         selectedIndex = -1;
         renderProjects(projects, projectsContainer, 'h2'); // Show all projects
-        //renderPieChart(projects);
+        //renderPieChart(projects);  // UNCOMMENT IF YOU WANT THE CLICK QUERY TO RECALCULATE YOUR PIE CHART
     } else {
         selectedIndex = selectedYear;
         const filteredProjects = projects.filter((project) => project.year === selectedYear);
         renderProjects(filteredProjects, projectsContainer, 'h2');
-        //renderPieChart(filteredProjects);
+        //renderPieChart(filteredProjects); // UNCOMMENT IF YOU WANT THE CLICK QUERY TO RECALCULATE YOUR PIE CHART
     }
     let filteredProjects = projects.filter((project) => {
         let matchesQuery = query === "" || Object.values(project).join('\n').toLowerCase().includes(query.toLowerCase());
         let matchesYear = selectedIndex === -1 || project.year === selectedIndex;
-        return matchesQuery && matchesYear;
+        return matchesQuery && matchesYear; 
     });
 
 
     renderProjects(filteredProjects, projectsContainer, 'h2');
-    //renderPieChart(filteredProjects);
+    //renderPieChart(filteredProjects); // UNCOMMENT IF YOU WANT THE CLICK QUERY TO RECALCULATE YOUR PIE CHART
 
     
     //d3.selectAll("path").classed("selected", (d, i) => i === selectedIndex);
