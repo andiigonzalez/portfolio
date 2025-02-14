@@ -176,7 +176,7 @@ function createScatterplot() {
     .attr("transform", `translate(${usableArea.left}, 0)`)
     .call(yAxis);
 
-  const colorScale = d3.scaleSequential(d3.interpolateViridis).domain([24, 1]);
+  const colorScale = d3.scaleSequential(d3.interpolatePlasma).domain([24, 1]);
 
   const dots = svg.append("g").attr("class", "dots");
 
@@ -272,7 +272,9 @@ function updateLanguageBreakdown() {
     const formatted = d3.format(".1~%")(proportion);
     container.innerHTML += `<dt>${language}</dt><dd>${count} lines (${formatted})</dd>`;
   }
+  return breakdown;
 }
+
 
 
 document.addEventListener("DOMContentLoaded", async () => {
