@@ -72,6 +72,8 @@ h1 {
     margin-bottom: 5px;
 }
 
+/* >>>>>>>>>>>>>>>>>>>>> GITHUB STATISTICS <<<<<<<<<<<<<<<<<<<<<<<< */
+
 /* Styling for Profile Stats */
 #profile-stats h2{
     margin-top: 2px;
@@ -87,6 +89,7 @@ h1 {
 
 #profile-stats dt {
     grid-row: 1;
+    color: gray;
 }
 
 #profile-stats dd {
@@ -162,9 +165,10 @@ nav {
         border-radius: 5px;
         padding: 10px;
 
-        h1{
+        h1 {
             font-size: 2.8em;
             margin-bottom:2px;
+            text-align: center;
         }
 
         h2 {
@@ -385,7 +389,6 @@ label {
   }
   
   .stats dt {
-    font-weight: bold;
     text-align: center;
     white-space: nowrap; /* Prevent text from breaking into new lines */
     grid-row: 1; /* Place all <dt> elements in first row */
@@ -446,7 +449,7 @@ label {
     transition-duration: 500ms;
     transition-property: opacity, visibility;
   }
-  
+
   dl.info[hidden]:not(:hover, :focus-within) {
     opacity: 0;
     visibility: hidden;

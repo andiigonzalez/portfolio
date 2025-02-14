@@ -17,6 +17,7 @@ const profileStats = document.querySelector('#profile-stats'); // Select HTML co
 
 if (profileStats) {
     profileStats.innerHTML = `
+    <p></p>
         <h2>My GitHub Statistics: </h2>
             <dl>
                 <dt>FOLLOWERS:</dt><dd>${githubData.followers}</dd>
