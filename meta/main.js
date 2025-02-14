@@ -1,4 +1,4 @@
-const width = 1000;
+const width = 800;
 const height = 600;
 const margin = { top: 10, right: 10, bottom: 50, left: 50 }; 
 
@@ -81,16 +81,16 @@ function displayStats() {
     dl.append('dt').text('Commits');
     dl.append('dd').text(commits.length);
 
+    dl.append('dt').text('Files');
+    dl.append('dd').text(d3.group(data, d => d.file).size);
+
     dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
     dl.append('dd').text(data.length);
 
-    dl.append('dt').text('Number of files');
-    dl.append('dd').text(d3.group(data, d => d.file).size);
+    dl.append('dt').text('Max Depth');
+    dl.append('dd').text(d3.max(data, d => d.depth));
 
-    dl.append('dt').text('Longest line length');
-    dl.append('dd').text(d3.max(data, d => d.length));
-
-    dl.append('dt').text('Average file length');
+    dl.append('dt').text('Avg. File Length');
     const fileLengths = d3.rollups(
         data,
         v => d3.max(v, d => d.line),
@@ -105,7 +105,7 @@ function displayStats() {
     );
     const maxPeriod = d3.greatest(workByPeriod, d => d[1])?.[0];
     dl.append('dt').text('Most active time of day');
-    dl.append('dd').text(maxPeriod);
+    dl.append('dd').text(maxPeriod).capitalize();
 }
 
 function updateTooltipContent(commit) {
@@ -130,8 +130,8 @@ function updateTooltipVisibility(isVisible) {
 
 function updateTooltipPosition(event) {
   const tooltip = document.getElementById('commit-tooltip');
-  tooltip.style.left = `${event.clientX + 10}px`;
-  tooltip.style.top = `${event.clientY + 10}px`;
+  tooltip.style.left = `${event.clientX + 15}px`;
+  tooltip.style.top = `${event.clientY + 15}px`;
 }
 
 function createScatterplot() {
@@ -145,7 +145,7 @@ function createScatterplot() {
   
     yScale = d3
       .scaleLinear()
-      .domain([0, 24])
+      .domain([1, 24])
       .range([usableArea.bottom, usableArea.top]);
 
     const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
@@ -170,14 +170,13 @@ function createScatterplot() {
       .call(xAxis)
       .selectAll("text")
       .style("text-anchor", "end")
-      .attr("transform", "rotate(-35)");
   
     svg.append("g")
       .attr("transform", `translate(${usableArea.left}, 0)`)
       .call(yAxis);
   
 
-    const colorScale = d3.scaleSequential(d3.interpolateRdYlBu).domain([0, 24]);
+    const colorScale = d3.scaleSequential(d3.interpolateRdYlBu).domain([1, 24]);
   
   
     const dots = svg.append("g").attr("class", "dots");

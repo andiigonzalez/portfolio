@@ -90,6 +90,7 @@ h1 {
 #profile-stats dt {
     grid-row: 1;
     letter-spacing: 1px;
+    text-transform: uppercase;
     color: gray;
 }
 
@@ -385,7 +386,7 @@ label {
 /* >>>>>>>>>>>>>>>>>> STATISTICS TABLE <<<<<<<<<<<<<<<<<<*/
 .stats {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);  /* 7 columns of equal size*/
+    grid-template-columns: repeat(6, 1fr);  /* 7 columns of equal size*/
     gap: 1rem; 
   }
   h2{
@@ -398,15 +399,13 @@ label {
     grid-row: 1; /* Place all <dt> elements in first row */
     color: gray;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 1em;
+    letter-spacing: 0.1px;
   }
   
   .stats dd {
     text-align: center;
     grid-row: 2; /* Place all <dd> elements in second row */
     margin: 0; 
-    font-weight: bold;
   }
 
   #chart svg {
