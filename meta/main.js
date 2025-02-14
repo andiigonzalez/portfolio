@@ -190,6 +190,7 @@ function createScatterplot() {
       .attr("r", (d) => rScale(d.totalLines))
       .attr("fill", (d) => colorScale(d.hourFrac))
       .style("fill-opacity", 0.7)
+      
       .on("mouseenter", function (event, d) {
         d3.select(event.currentTarget).style("fill-opacity", 1);
         updateTooltipContent(d);

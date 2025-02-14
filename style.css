@@ -371,3 +371,115 @@ label {
     padding: 1em;
     text-align: center;  
 }
+
+/* 
+-----------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------- META SUMMARY STATISTICS ---------------------------------------------------------
+*/
+
+/* >>>>>>>>>>>>>>>>>> STATISTICS TABLE <<<<<<<<<<<<<<<<<<*/
+.stats {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);  /* 7 columns of equal size*/
+    gap: 1rem; 
+  }
+  
+  .stats dt {
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap; /* Prevent text from breaking into new lines */
+    grid-row: 1; /* Place all <dt> elements in first row */
+    font-size: 10px;
+    color: gray;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .stats dd {
+    text-align: center;
+    grid-row: 2; /* Place all <dd> elements in second row */
+    margin: 0; 
+    font-weight: bold;
+  }
+
+  #chart svg {
+    width: 100%;
+    height: 600px;
+    max-width: 1000px;
+  }
+  
+  #chart {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+  }
+  /* make lines less prominent and thinner*/
+  .gridlines line {
+    stroke-opacity: 0.3;
+    stroke-width: .5; 
+  }
+  
+  .tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    padding: 0.75em;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    transition: opacity 300ms, visibility 300ms;
+    font-size: 0.9em;
+    max-width: 200px;
+  }
+  
+  .tooltip[hidden] {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 10px;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+  }
+  
+  dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  dl.info dt {
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+  
+  dl.info dd {
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  circle {
+    transition: transform 200ms ease-in-out;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  circle:hover {
+    transform: scale(1.5);
+  }
+  
+  
+  .selection {
+    fill-opacity: 0.1;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+  }
+  
+  circle.selected {
+    fill: #ffacba;
+  }
