@@ -9,8 +9,9 @@ body {
        */
     accent-color: var(--color-accent);
     font: 100%/1.5 system-ui;
-    max-width: 140ch;
+    width:100;
     margin-inline: auto;
+    padding: 3em;
 
   }
 h1 {
@@ -126,6 +127,7 @@ nav {
         color: inherit;
         text-align: center;
         padding: 0.5em;
+        transition: all 0.3s ease;
         
         &.current{
             flex: 1;
@@ -150,48 +152,49 @@ nav {
 .projects{
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    gap: 1em;
+    gap: 3em;
+    justify-items: center;
 
     img{
-        border-radius: 10px;
-        width:300px;
-        height:150px;
-        padding-bottom: 0.3em;
+      width:300px;
+      height:150px;
+      justify-items: auto;
+      padding-bottom: 0.3em;
     }
 
     article {
-        grid-template-rows:subgrid;
-        grid-row: span 3;
-        gap: 10px 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
+      grid-template-rows:subgrid;
+      grid-row: span 3;
+      gap: 10px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
 
-        h1 {
-            font-size: 2.8em;
-            margin-bottom:2px;
-            text-align: center;
-        }
+      h1 {
+          font-size: 2.8em;
+          margin-bottom:2px;
+          text-align: center;
+      }
 
-        h2 {
-            margin-top:1px;
-            align-items: center;
-            text-align:center;
-            padding-bottom: 0.8em;
-            margin-bottom:2.5px;
-            gap: 1em;
-            font-size: 1.5em;
+      h2 {
+        margin-top:1px;
+        align-items: center;
+        text-align:center;
+        padding-bottom: 0.8em;
+        margin-bottom:2.5px;
+        gap: 1em;
+        font-size: 1.5em;
         }
-        h1, h2, h3, h4, h5, h6 {
-            line-height: 1.1;
-            text-align: balance;
-        }
-        &:hover{
-            border-bottom:0.4em solid var(--color-accent);
-            background-color: oklch(from var(--color-accent) 95% 5% h);
-            padding-bottom: 0.2em;
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.1;
+        text-align: balance;
+      }
+      &:hover{
+          border-bottom:0.4em solid var(--color-accent);
+          background-color: oklch(from var(--color-accent) 95% 5% h);
+          padding-bottom: 0.2em;
 
-        }
+      }
     }
 }
 .project-year {

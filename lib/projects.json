@@ -14,7 +14,7 @@
     {
         "title": "Visualization Techniques: Deceptive Techniques",
         "year": "2025",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/deceptive-visualizations.jpg",
+        "image":  "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Understanding deceptive visualizations and their characteristics. "
     },
     {
@@ -32,13 +32,13 @@
     {
         "title": "Website From Scratch",
         "year": "2025",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/website.jpg",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Leveraged knowledge of Javascript, HTML, and CSS to create a personal website from scratch to display my project portfolio and resume."
     },
     {
         "title": "Image Processing",
         "year": "2023",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/knn-img-clasification.jpg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/knn.jpg",
         "description": "This notebook includes several image processing techniques implemented in Python such as KNN Image Classifier, blurring, highlighting the edges and many more."
     },
     {
