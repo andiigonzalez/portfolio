@@ -9,7 +9,7 @@ body {
        */
     accent-color: var(--color-accent);
     font: 100%/1.5 system-ui;
-    width:100;
+    width:90%;
     margin-inline: auto;
     padding: 3em;
 
