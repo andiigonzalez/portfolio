@@ -32,21 +32,21 @@
     {
         "title": "Website From Scratch",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/DSC106_website.png",
         "description": "Leveraged knowledge of Javascript, HTML, and CSS to create a personal website from scratch to display my project portfolio and resume."
     },
     {
         "title": "Image Processing",
         "year": "2023",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/knn.jpg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/knn.png",
         "description": "This notebook includes several image processing techniques implemented in Python such as KNN Image Classifier, blurring, highlighting the edges and many more."
     },
     {
         "title": "Two Tired -Geospatial Visualization",
         "year": "2025",
-        "image": "https://andiigonzalez.github.io/portfolio/imgs/bikewatching.jpg",
+        "image": "https://andiigonzalez.github.io/portfolio/imgs/bikewatching.png",
         "url":  "https://andiigonzalez.github.io/twotired/",
-        "description": "Design of Mapbox visualization with overlaid SVG scatterplot to represent cycling lanes and station traffic in Boston."
+        "description": "Design of Mapbox visualization with overlaid SVG scatterplot to represent cycling lanes and station traffic in Boston. The graph is embedded in a github pages website constructed through JS, CSS, and HTML."
     },
     {
         "title": "Project Title",

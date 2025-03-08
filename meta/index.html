@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script type="module" src="../global.js"></script>
-    <script defer src="main.js"></script> 
 </head>
 <body>
     <h1>Meta Analysis</h1>
 
     <div id="stats"><h2>Summary Statistics</h2></div>
 
-    <h2 text-align:center;>Commits by Time and Day</h2>
-    <div id="chart"></div>
+
+    <h2>Commits by Time and Day</h2>
+    <div id="scrollytelling">
+        <div id="scroll-container">
+            <div id="spacer"></div>
+            <div id="items-container"></div>
+        </div>
+        <div id="chart"></div>
+    </div>
     <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd>
@@ -24,19 +30,21 @@
       
         <dt>Date</dt>
         <dd id="commit-date"></dd>
+
+        <dt>Time</dt>
+        <dd id="commit-time"></dd>
       
         <dt>Author</dt>
         <dd id="commit-author"></dd>
       
         <dt>Lines Edited</dt>
-        <dd id="commit-lines"></dd>
-      
+        <dd id="commit-lines-edited"></dd>
     </dl>
+
     <p id="selection-count">No commits selected</p>
     <dl id="language-breakdown" class="stats"></dl>
     <br></br>
-    
 
-    
+    <script src="main.js"></script>
 </body>
 </html>
